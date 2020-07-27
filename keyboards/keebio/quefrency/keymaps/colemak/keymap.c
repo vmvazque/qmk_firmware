@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,    KC_LBRC, KC_RBRC, KC_BSPC, \
     LT(ARROW_LAYER, KC_BSPC), KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_K,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT, KC_ENT, \
     KC_LSFT, KC_X,    KC_C,    KC_D,    KC_V,    KC_Z,    KC_M,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_BSLS, \
-    KC_LCTL, KC_LGUI, KC_LALT, LT(UI_LAYER, KC_SPC), LT(FN_LAYER, KC_DEL),           LT(FN_LAYER,KC_SPC), LT(FN_LAYER, KC_SPC), KC_RALT, KC_LEFT, XXXXXXX, KC_DOWN, KC_RCTL
+    KC_LCTL, KC_LGUI, KC_LALT, LT(UI_LAYER, KC_SPC), LT(FN_LAYER, KC_DEL),           LT(FN_LAYER,KC_SPC), LT(FN_LAYER, KC_SPC), KC_RALT, TO(QWERTY_LAYER), XXXXXXX, KC_DOLLAR, KC_RCTL
   ),
 
   [ARROW_LAYER] = LAYOUT(
@@ -88,7 +88,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, SCMD(KC_LEFT), SCMD(KC_DOWN), SCMD(KC_RIGHT), _______, _______, _______, _______, _______, _______, _______, _______,\
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
     _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______, _______
-  )
+  ),
+
+  [QWERTY_LAYER] = LAYOUT(
+    KC_GESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_DEL,  KC_GRV, \
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSPC, \
+    KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT, \
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_UP, \
+    KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, KC_SPC,           KC_SPC, KC_SPC, KC_RALT, TO(BASE_LAYER), XXXXXXX, KC_DOWN, KC_RCTL
+  ),
 };
 
 void matrix_scan_user(void) {
